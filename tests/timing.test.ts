@@ -1,6 +1,5 @@
 import {describe, expect, it} from 'vitest';
-import {disclosureFrames} from '../src/timing';
-import {cardFrames} from '../src/timing';
+import {cardFrames, disclosureFrames} from '../src/timing';
 import sample from '../src/data/cards.json';
 
 describe('disclosure timing', () => {

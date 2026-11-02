@@ -1,8 +1,8 @@
-# demo-remotion-card
+# JSON-driven video cards
 
 [![CI](https://github.com/shawnrruss/demo-remotion-card/actions/workflows/ci.yml/badge.svg)](https://github.com/shawnrruss/demo-remotion-card/actions/workflows/ci.yml)
 
-**A 31-second white-on-black disclosure, bullet recap and closing card rendered from one JSON file with React, TypeScript and Remotion.**
+Generate disclosure, recap, and closing cards from one editable JSON file. The sample composition is configured for 31 seconds at 24 fps, with tests for timing and optional sequences.
 
 <p>
   <img src="docs/preview.png" width="32%" alt="Disclosure card, frame 24">
@@ -10,7 +10,7 @@
   <img src="docs/preview-closing.png" width="32%" alt="Closing card, frame 720">
 </p>
 
-Original demo, made-up data, not client work. AI-assisted implementation.
+Original portfolio demonstration with made-up data; not client work. AI-assisted implementation. Rendered stills are included; video-render commands run locally.
 
 ## What it shows
 
@@ -64,6 +64,8 @@ The three pictures above are real renders of the `Main` composition at 1280x720
 - the rendered disclosure text equals the JSON text, whitespace and punctuation included
 - validation rejects missing, empty and whitespace-only text
 - no sample text is hard-coded in the composition sources
+
+CI runs the tests and TypeScript checks; video rendering is a separate local step.
 
 `npm run lint` is a strict TypeScript pass (`noUnusedLocals`, `noUnusedParameters`,
 `noImplicitReturns`, `noFallthroughCasesInSwitch`) over `src` and `tests`;

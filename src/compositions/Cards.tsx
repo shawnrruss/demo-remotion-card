@@ -1,8 +1,9 @@
+// The card components; one shared AbsoluteFill style keeps every card identical.
 import type {CSSProperties, ReactNode} from 'react';
 import {AbsoluteFill} from 'remotion';
 import type {Cards} from '../schema';
 
-const style: CSSProperties = {
+const cardStyle: CSSProperties = {
   backgroundColor: 'black',
   color: 'white',
   justifyContent: 'center',
@@ -15,17 +16,18 @@ const style: CSSProperties = {
 };
 
 function Card({children}: {children: ReactNode}) {
-  return <AbsoluteFill style={style}>{children}</AbsoluteFill>;
+  return <AbsoluteFill style={cardStyle}>{children}</AbsoluteFill>;
 }
 
-export function DisclosureCard({data}: {data: Cards}) {
-  return <Card><div>{data.disclosureText}</div></Card>;
+// The disclosure and closing cards differ only in the field they read.
+function TextCard({children}: {children: ReactNode}) {
+  return <Card><div>{children}</div></Card>;
 }
 
-export function RecapCard({data}: {data: Cards}) {
-  return <Card><ul>{data.recapLines.map((line, index) => <li key={index}>{line}</li>)}</ul></Card>;
-}
+export const DisclosureCard = ({data}: {data: Cards}) => <TextCard>{data.disclosureText}</TextCard>;
 
-export function EndCard({data}: {data: Cards}) {
-  return <Card><div>{data.endText}</div></Card>;
-}
+export const EndCard = ({data}: {data: Cards}) => <TextCard>{data.endText}</TextCard>;
+
+export const RecapCard = ({data}: {data: Cards}) => (
+  <Card><ul>{data.recapLines.map((line, index) => <li key={index}>{line}</li>)}</ul></Card>
+);

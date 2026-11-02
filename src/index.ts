@@ -1,3 +1,4 @@
+// Remotion entry point: registerRoot mounts Root for the CLI renderer.
 import {registerRoot} from 'remotion';
 import {Root} from './Root';
 

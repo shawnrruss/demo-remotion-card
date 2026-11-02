@@ -1,10 +1,10 @@
+// Frame arithmetic: every duration derives from the JSON, never hand-tuned.
 import type {Cards} from './schema';
 
-export function disclosureFrames(
-  data: {holdSeconds?: number},
-  fps: number,
-): number {
-  return Math.round((data.holdSeconds ?? 8) * fps);
+const DEFAULT_HOLD_SECONDS = 8;
+
+export function disclosureFrames(data: Pick<Cards, 'holdSeconds'>, fps: number): number {
+  return Math.round((data.holdSeconds ?? DEFAULT_HOLD_SECONDS) * fps);
 }
 
 export function cardFrames(data: Cards, fps = data.fps) {

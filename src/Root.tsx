@@ -4,6 +4,7 @@ import {validate} from './schema';
 import {cardFrames} from './timing';
 import {Main} from './compositions/Main';
 
+// The single Main composition: size and duration come from the validated JSON.
 const data = validate(sample);
 
 export function Root() {

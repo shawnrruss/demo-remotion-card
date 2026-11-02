@@ -19,14 +19,9 @@ function Card({children}: {children: ReactNode}) {
   return <AbsoluteFill style={cardStyle}>{children}</AbsoluteFill>;
 }
 
-// The disclosure and closing cards differ only in the field they read.
-function TextCard({children}: {children: ReactNode}) {
-  return <Card><div>{children}</div></Card>;
-}
+export const DisclosureCard = ({data}: {data: Cards}) => <Card><div>{data.disclosureText}</div></Card>;
 
-export const DisclosureCard = ({data}: {data: Cards}) => <TextCard>{data.disclosureText}</TextCard>;
-
-export const EndCard = ({data}: {data: Cards}) => <TextCard>{data.endText}</TextCard>;
+export const EndCard = ({data}: {data: Cards}) => <Card><div>{data.endText}</div></Card>;
 
 export const RecapCard = ({data}: {data: Cards}) => (
   <Card><ul>{data.recapLines.map((line, index) => <li key={index}>{line}</li>)}</ul></Card>

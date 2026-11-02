@@ -1,0 +1,14 @@
+{
+  "fps": 24,
+  "disclosureText": "This program contains dramatised scenes. Names have been changed.",
+  "holdSeconds": 8,
+  "showRecap": true,
+  "recapSeconds": 20,
+  "recapLines": [
+    "A small idea became a shared experiment.",
+    "The team learned by making things together.",
+    "The next chapter starts with a question."
+  ],
+  "endText": "Thank you for watching.",
+  "endSeconds": 3
+}

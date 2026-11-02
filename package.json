@@ -1,0 +1,25 @@
+{
+  "name": "demo-remotion-card",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "render:preview": "remotion render src/index.ts Main out/preview.mp4 --scale=0.3333333333333333 --frames=0-47",
+    "render": "remotion render src/index.ts Main out/main.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.539",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.30",
+    "@types/react": "19.1.6",
+    "@types/react-dom": "19.1.6",
+    "typescript": "5.8.3",
+    "vitest": "3.2.4"
+  }
+}
